@@ -1578,6 +1578,73 @@ paths:
       responses:
         default:
           description: Default response
+  /libs/granite/security/post/sslcert:
+    post:
+      operationId: postSslcert
+      parameters:
+        - name: :operation
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: keystorePassword
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: keystorePasswordConfirm
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: keystorePasswordConfirm
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: truststorePasswordConfirm
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: privatekeyFile
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: certificateFile
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: httpsHostname
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: httpsPort
+          in: query
+          required: false
+          schema:
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                certificate:
+                  type: string
+                  format: binary
+      responses:
+        default:
+          description: Default response
+          content:
+            text/plain:
+              schema:
+                type: string
+      tags:
+        - sling
   /libs/granite/security/post/truststore:
     post:
       operationId: postTruststore
